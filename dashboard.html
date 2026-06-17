@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capital Programme Dashboard | Oladipo Ajibawo</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{--blue:#0066cc;--blue2:#0a4d99;--ink:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--bg:#f5f5f7;--card:#fff;--teal:#0a9396;--amber:#e8a33d}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 2.5rem}
+  .top{background:linear-gradient(135deg,var(--blue) 0%,var(--blue2) 100%);color:#fff;padding:3.4rem 0 3.6rem}
+  .top .eyebrow{text-transform:uppercase;letter-spacing:.11em;font-size:.72rem;font-weight:600;opacity:.85}
+  .top h1{font-size:2rem;font-weight:800;letter-spacing:-.02em;margin:.5rem 0 .4rem}
+  .top p{opacity:.92;max-width:640px;font-weight:300;font-size:.98rem}
+  .back{display:inline-block;margin-top:1.3rem;color:#fff;font-size:.82rem;font-weight:600;border:1px solid rgba(255,255,255,.4);padding:.5rem 1rem;border-radius:100px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin:2.2rem 0}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.4rem}
+  .kpi .n{font-size:1.9rem;font-weight:800;color:var(--blue);letter-spacing:-.03em;line-height:1}
+  .kpi .l{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:.5rem;font-weight:600}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.2rem}
+  @media(max-width:820px){.grid2{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.5rem}
+  .panel h2{font-size:1rem;font-weight:700;letter-spacing:-.01em}
+  .panel .sub{font-size:.74rem;color:var(--muted);margin-bottom:1rem}
+  .chart-box{position:relative;height:290px}
+  .sect{font-size:1.3rem;font-weight:800;letter-spacing:-.02em;margin:2.6rem 0 1.2rem}
+  .projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1rem}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.5rem;transition:all .2s}
+  .pcard:hover{border-color:#b8b8be;box-shadow:0 6px 30px rgba(0,0,0,.07);transform:translateY(-2px)}
+  .pcard h3{font-size:1rem;font-weight:700;margin-bottom:.4rem}
+  .pcard .meta{font-size:.66rem;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.6rem}
+  .pcard p{font-size:.78rem;color:var(--muted);font-weight:300}
+  .ach{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .ach .r{display:flex;gap:.9rem;align-items:flex-start;padding:.9rem 1.3rem;border-bottom:1px solid var(--line);font-size:.84rem}
+  .ach .r:last-child{border-bottom:none}
+  .ach .num{flex:none;width:24px;height:24px;border-radius:7px;background:var(--blue);color:#fff;font-weight:800;font-size:.72rem;display:flex;align-items:center;justify-content:center}
+  footer{text-align:center;color:var(--muted);font-size:.74rem;padding:2.4rem 0 3rem}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="wrap">
+    <div class="eyebrow">Capital Programme Dashboard</div>
+    <h1>Telecom Infrastructure Delivery</h1>
+    <p>Programme view across nine concurrent workstreams: tower builds, power and energy, fiber transmission, site resilience, EHS governance and vendor coordination.</p>
+    <a class="back" href="index.html">&larr; Back to portfolio</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kpis">
+    <div class="kpi"><div class="n">9</div><div class="l">Workstreams</div></div>
+    <div class="kpi"><div class="n">26</div><div class="l">Vendor Partners</div></div>
+    <div class="kpi"><div class="n">187</div><div class="l">Sites Capitalized / Mo</div></div>
+    <div class="kpi"><div class="n">328+</div><div class="l">New Build Sites YTD</div></div>
+    <div class="kpi"><div class="n">461</div><div class="l">Tower Upgrades Delivered</div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="panel"><h2>Delivery by Workstream</h2><div class="sub">Share of work across delivery domains</div><div class="chart-box"><canvas id="wsChart"></canvas></div></div>
+    <div class="panel"><h2>Vendor Engagement by Domain</h2><div class="sub">Distinct vendor companies per workstream</div><div class="chart-box"><canvas id="vendorChart"></canvas></div></div>
+  </div>
+  <div class="grid2">
+    <div class="panel"><h2>Site Delivery Output</h2><div class="sub">Completed site counts by category</div><div class="chart-box"><canvas id="deliveryChart"></canvas></div></div>
+    <div class="panel"><h2>Portfolio Composition</h2><div class="sub">Governance and delivery balance</div><div class="chart-box"><canvas id="typeChart"></canvas></div></div>
+  </div>
+
+  <div class="sect">Workstreams</div>
+  <div class="projects" id="projGrid"></div>
+
+  <div class="sect">Selected Outcomes</div>
+  <div class="ach" id="achGrid"></div>
+</div>
+<footer>Capital programme delivery dashboard &middot; Oladipo Ajibawo</footer>
+
+<script>
+const blue='#0066cc',blue2='#0a4d99',teal='#0a9396',amber='#e8a33d',violet='#7b6cb3',rose='#d9776b';
+Chart.defaults.font.family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif";Chart.defaults.font.size=12;Chart.defaults.color='#6e6e73';
+const ws=[['Power & Energy',221],['New Build & Rollout',147],['Vendor & Procurement',110],['Fiber & Transmission',59],['Site Refurb & Civil',55],['Capitalization',26],['EHS / Safety',25],['Governance',9],['Security',4]];
+new Chart(wsChart,{type:'bar',data:{labels:ws.map(w=>w[0]),datasets:[{data:ws.map(w=>w[1]),backgroundColor:blue,borderRadius:6,barThickness:16}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:'#eef2f7'}},y:{grid:{display:false}}}}});
+new Chart(vendorChart,{type:'bar',data:{labels:['Power','New Build','Procurement','Fiber','Civil','EHS'],datasets:[{data:[25,8,11,5,4,3],backgroundColor:teal,borderRadius:6}]},options:{plugins:{legend:{display:false}},scales:{y:{grid:{color:'#eef2f7'}},x:{grid:{display:false}}}}});
+new Chart(deliveryChart,{type:'bar',data:{labels:['Light Retrofit','Diesel Tanks','Refurbishment','Fiber Splice','Flooded Sites','Civil Upgrade'],datasets:[{data:[162,91,79,63,34,30],backgroundColor:[blue,blue2,teal,amber,violet,rose],borderRadius:6}]},options:{plugins:{legend:{display:false}},scales:{y:{grid:{color:'#eef2f7'}},x:{grid:{display:false}}}}});
+new Chart(typeChart,{type:'doughnut',data:{labels:['Reports & Records','Documents','Data'],datasets:[{data:[250,131,2],backgroundColor:[blue,amber,teal],borderWidth:0}]},options:{cutout:'62%',plugins:{legend:{position:'bottom'}}}});
+const projects=[
+ {t:'Power & Energy Systems',m:'221 work products · 25 vendors',d:'Solar, diesel, battery and metering deployments. Highest volume workstream and centre of vendor coordination.'},
+ {t:'New Build & Site Rollout',m:'147 work products',d:'New tower builds and colocation for two mobile operators, including 5G and MIMO. More than 328 sites year to date.'},
+ {t:'Vendor & Procurement',m:'110 work products · 26 vendors',d:'Contract administration, purchase orders, onboarding and addenda across a 26 company supplier ecosystem.'},
+ {t:'Fiber & Transmission',m:'59 work products',d:'Fiber splicing, duct works and OTDR validated acceptance across 63 sites.'},
+ {t:'Site Refurbishment & Civil',m:'55 work products',d:'Refurbishment, light retrofit, flood remediation and civil upgrades. 162 retrofit and 79 refurbishment sites.'},
+ {t:'EHS / Health & Safety',m:'25 work products',d:'EHS governance: management plan, hazard and risk register, tower climbing safety and evacuation.'},
+ {t:'Capitalization & Close',m:'26 work products',d:'Capital project capitalization and financial close. Certified 187 completed site projects in one month.'},
+ {t:'Governance & Reporting',m:'9 work products',d:'Weekly collaboration meetings, operational performance reporting and programme dashboards.'},
+];
+projGrid.innerHTML=projects.map(p=>`<div class="pcard"><h3>${p.t}</h3><div class="meta">${p.m}</div><p>${p.d}</p></div>`).join('');
+const ach=['Certified 187 completed site projects in a single month across one region','Coordinated delivery of more than 328 new build sites year to date','Delivered the tower upgrade programme across 461 sites','Oversaw fiber splicing and termination across 63 sites','Delivered light retrofit across 162 sites and refurbishment of 79 sites','Coordinated diesel tank deployment to 91 sites, 54 swapped and installed','5G deployments completed across 209 and 146 sites for two MNOs','Completed flood remediation for 34 sites and 30 civil upgrades','Established EHS governance including plan, risk register and safety guidelines','Coordinated a vendor ecosystem of 26 partner companies'];
+achGrid.innerHTML=ach.map((a,i)=>`<div class="r"><div class="num">${i+1}</div><span>${a}</span></div>`).join('');
+</script>
+</body>
+</html>
