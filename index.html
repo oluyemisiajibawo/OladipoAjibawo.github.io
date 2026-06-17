@@ -129,7 +129,7 @@ a { text-decoration: none; color: inherit; }
   font-weight: 600;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #98989d;
+  color: #6e6e73;
   padding: 0.8rem 1rem 0.45rem;
 }
 .cv-dropdown a {
@@ -152,7 +152,7 @@ a { text-decoration: none; color: inherit; }
 .cv-dot-pmo { background: #1a7f3c; }
 .cv-dot-rr { background: #5e3bc1; }
 .cv-label-wrap { display: flex; flex-direction: column; gap: 0.05rem; }
-.cv-sub { font-size: 0.7rem; color: #98989d; font-weight: 400; }
+.cv-sub { font-size: 0.7rem; color: #6e6e73; font-weight: 400; }
 .cv-request-link {
   border-top: 1px solid #e5e5ea !important;
   color: #0066cc !important;
@@ -289,7 +289,7 @@ a { text-decoration: none; color: inherit; }
   line-height: 1;
   margin-bottom: 0.15rem;
 }
-.hstat-lbl { font-size: 0.73rem; color: #98989d; font-weight: 400; }
+.hstat-lbl { font-size: 0.73rem; color: #6e6e73; font-weight: 400; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
 /* SECTION BASE */
@@ -351,7 +351,7 @@ section { padding: 7rem 0; }
   color: #1d1d1f;
   line-height: 1;
 }
-.metric-l { font-size: 0.73rem; color: #98989d; margin-top: 0.4rem; line-height: 1.4; }
+.metric-l { font-size: 0.73rem; color: #6e6e73; margin-top: 0.4rem; line-height: 1.4; }
 
 /* ABOUT */
 #about { background: #ffffff; }
@@ -380,7 +380,7 @@ section { padding: 7rem 0; }
   font-weight: 600;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #98989d;
+  color: #6e6e73;
   margin-bottom: 0.8rem;
   margin-top: 1.6rem;
 }
@@ -410,7 +410,7 @@ section { padding: 7rem 0; }
   letter-spacing: 0.03em;
 }
 .cert-name { font-size: 0.81rem; font-weight: 500; color: #1d1d1f; line-height: 1.25; }
-.cert-iss { font-size: 0.71rem; color: #98989d; }
+.cert-iss { font-size: 0.71rem; color: #6e6e73; }
 
 /* EXPERTISE */
 #expertise { background: #f5f5f7; }
@@ -436,7 +436,7 @@ section { padding: 7rem 0; }
 .exp-num {
   font-family: "Courier New", Courier, monospace;
   font-size: 0.73rem;
-  color: #c7c7cc;
+  color: #6e6e73;
   margin-bottom: 1.1rem;
   font-weight: 500;
 }
@@ -475,10 +475,10 @@ section { padding: 7rem 0; }
 .tl-date {
   font-family: "Courier New", Courier, monospace;
   font-size: 0.73rem;
-  color: #98989d;
+  color: #6e6e73;
   line-height: 1.65;
 }
-.tl-loc { font-size: 0.73rem; color: #98989d; margin-top: 0.28rem; }
+.tl-loc { font-size: 0.73rem; color: #6e6e73; margin-top: 0.28rem; }
 .tl-right { flex: 1; }
 .tl-role {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -539,7 +539,7 @@ section { padding: 7rem 0; }
   font-weight: 600;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #98989d;
+  color: #6e6e73;
   margin-bottom: 0.72rem;
 }
 .proj-title {
@@ -567,7 +567,7 @@ section { padding: 7rem 0; }
   letter-spacing: -0.03em;
   line-height: 1;
 }
-.pm-lbl { font-size: 0.68rem; color: #98989d; margin-top: 0.18rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.pm-lbl { font-size: 0.68rem; color: #6e6e73; margin-top: 0.18rem; text-transform: uppercase; letter-spacing: 0.05em; }
 .proj-tags { display: -webkit-flex; display: flex; flex-wrap: wrap; gap: 0.33rem; margin-top: 1.1rem; }
 .proj-tag {
   font-size: 0.68rem;
@@ -579,6 +579,27 @@ section { padding: 7rem 0; }
   font-weight: 500;
 }
 
+/* PM TOOLKIT */
+#toolkit { background: #ffffff; }
+.tk-feature { display: -webkit-flex; display: flex; gap: 1.05rem; flex-wrap: wrap; margin-bottom: 1.05rem; }
+.tk-banner { flex: 1; min-width: 300px; background: linear-gradient(135deg, #0066cc 0%, #0a4d99 100%); color: #fff; border-radius: 16px; padding: 1.9rem; display: -webkit-flex; display: flex; flex-direction: column; justify-content: center; }
+.tk-banner h3 { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+.tk-banner p { font-size: 0.82rem; opacity: 0.92; font-weight: 300; margin-bottom: 1.2rem; }
+.tk-actions { display: -webkit-flex; display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.tk-btn { display: -webkit-inline-flex; display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.8rem; font-weight: 600; padding: 0.62rem 1.1rem; border-radius: 100px; transition: all 0.18s; }
+.tk-btn.solid { background: #ffffff; color: #0066cc; }
+.tk-btn.solid:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.18); }
+.tk-btn.outline { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.45); }
+.tk-btn.outline:hover { background: rgba(255,255,255,0.22); }
+.tk-grid { display: -webkit-flex; display: flex; flex-wrap: wrap; gap: 0.7rem; }
+.tk-card { flex: 1; min-width: 230px; background: #ffffff; border: 1px solid #e5e5ea; border-radius: 14px; padding: 1.15rem 1.25rem; transition: all 0.2s; display: -webkit-flex; display: flex; flex-direction: column; justify-content: space-between; }
+.tk-card:hover { border-color: #b8b8be; box-shadow: 0 6px 24px rgba(0,0,0,0.06); transform: translateY(-2px); }
+.tk-card .tk-name { font-size: 0.92rem; font-weight: 700; color: #1d1d1f; margin-bottom: 0.25rem; letter-spacing: -0.01em; }
+.tk-card .tk-purpose { font-size: 0.74rem; color: #6e6e73; font-weight: 300; line-height: 1.55; margin-bottom: 0.9rem; }
+.tk-dl { display: -webkit-inline-flex; display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; font-weight: 600; color: #0066cc; align-self: flex-start; }
+.tk-dl:hover { text-decoration: underline; }
+.tk-note { font-size: 0.72rem; color: #6e6e73; margin-top: 1.4rem; text-align: center; font-weight: 300; }
+
 /* SKILLS */
 #skills { background: #ffffff; }
 .skills-layout { display: -webkit-flex; display: flex; gap: 5.5rem; -webkit-align-items: flex-start; align-items: flex-start; }
@@ -589,7 +610,7 @@ section { padding: 7rem 0; }
   font-weight: 600;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #98989d;
+  color: #6e6e73;
   margin-bottom: 0.9rem;
   margin-top: 1.9rem;
   display: -webkit-flex;
@@ -654,7 +675,7 @@ section { padding: 7rem 0; }
   margin-bottom: 0.42rem;
 }
 .edu-inst { font-size: 0.8rem; color: #0066cc; font-weight: 500; margin-bottom: 0.22rem; }
-.edu-period { font-size: 0.73rem; color: #98989d; }
+.edu-period { font-size: 0.73rem; color: #6e6e73; }
 
 /* CONTACT */
 #contact { background: #ffffff; }
@@ -692,13 +713,13 @@ section { padding: 7rem 0; }
 }
 .contact-link:hover .cl-icon { background: #1d1d1f; border-color: #1d1d1f; color: #ffffff; }
 .cl-label { font-size: 0.83rem; font-weight: 500; color: #1d1d1f; transition: color 0.18s; }
-.cl-val { font-size: 0.73rem; color: #98989d; }
+.cl-val { font-size: 0.73rem; color: #6e6e73; }
 .contact-form-wrap { flex: 1; }
 .contact-form { display: -webkit-flex; display: flex; flex-direction: column; gap: 0.82rem; }
 .form-group label {
   display: block;
   font-size: 0.7rem;
-  color: #98989d;
+  color: #6e6e73;
   margin-bottom: 0.33rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -720,7 +741,7 @@ section { padding: 7rem 0; }
 .form-group input:focus,
 .form-group textarea:focus { border-color: #0066cc; background: #ffffff; }
 .form-group input::placeholder,
-.form-group textarea::placeholder { color: #98989d; }
+.form-group textarea::placeholder { color: #6e6e73; }
 .form-group textarea { resize: vertical; min-height: 96px; line-height: 1.65; }
 .form-btn {
   background: #1d1d1f;
@@ -736,7 +757,7 @@ section { padding: 7rem 0; }
   width: 100%;
 }
 .form-btn:hover { background: #3d3d3f; }
-.form-note { font-size: 0.71rem; color: #98989d; text-align: center; margin-top: 0.5rem; }
+.form-note { font-size: 0.71rem; color: #6e6e73; text-align: center; margin-top: 0.5rem; }
 
 /* RESEARCH */
 #research { background: #f5f5f7; }
@@ -779,7 +800,7 @@ section { padding: 7rem 0; }
 .cat-net    { color: #0066cc; }  .dot-net    { background: #0066cc; }
 .cat-ai     { color: #5e3bc1; }  .dot-ai     { background: #5e3bc1; }
 .cat-health { color: #1a7f3c; }  .dot-health { background: #1a7f3c; }
-.cat-eng    { color: #98989d; }  .dot-eng    { background: #98989d; }
+.cat-eng    { color: #6e6e73; }  .dot-eng    { background: #6e6e73; }
 .cat-biz    { color: #b45309; }  .dot-biz    { background: #b45309; }
 .rc-title {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -846,9 +867,9 @@ footer {
   font-weight: 700;
   color: #1d1d1f;
 }
-.footer-copy { font-size: 0.73rem; color: #98989d; }
+.footer-copy { font-size: 0.73rem; color: #6e6e73; }
 .footer-links { display: -webkit-flex; display: flex; gap: 1.4rem; }
-.footer-links a { font-size: 0.73rem; color: #98989d; transition: color 0.18s; }
+.footer-links a { font-size: 0.73rem; color: #6e6e73; transition: color 0.18s; }
 .footer-links a:hover { color: #1d1d1f; }
 
 /* RESPONSIVE */
@@ -884,6 +905,7 @@ footer {
     <li><a href="#expertise">Expertise</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#toolkit">Toolkit</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#education">Education</a></li>
@@ -1119,7 +1141,7 @@ footer {
     <div class="proj-grid fade">
       <div class="proj-card proj-wide">
         <div class="proj-sector">Telecoms Infrastructure &middot; American Tower Corporation</div>
-        <div class="proj-title">&pound;150M+ Infrastructure Programme &ndash; 2,000+ Telecoms Sites</div>
+        <div class="proj-title">&pound;150M+ Infrastructure Programme - 2,000+ Telecoms Sites</div>
         <p class="proj-desc">Led end-to-end delivery of a large-scale telecoms infrastructure portfolio, coordinating virtual delivery teams of 50+ across engineering, vendor, and field operations spanning multiple regions. Sustained full benefit realisation, CAPEX within 5% of baseline, and 99.5% tower asset uptime throughout.</p>
         <div class="proj-metrics"><div><div class="pm-val">&pound;150M+</div><div class="pm-lbl">Programme Value</div></div><div><div class="pm-val">2,000+</div><div class="pm-lbl">Physical Sites</div></div><div><div class="pm-val">98%</div><div class="pm-lbl">On-Time Rate</div></div></div>
         <div class="proj-tags"><span class="proj-tag">Waterfall</span><span class="proj-tag">Agile Hybrid</span><span class="proj-tag">Smartsheet</span><span class="proj-tag">JIRA</span><span class="proj-tag">Virtual Teams 50+</span></div>
@@ -1153,6 +1175,128 @@ footer {
         <div class="proj-tags"><span class="proj-tag">Power BI</span><span class="proj-tag">Smartsheet</span><span class="proj-tag">Excel</span></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- PM TOOLKIT -->
+<section id="toolkit">
+  <div class="container">
+    <div class="section-header fade">
+      <div class="eyebrow">Resources &amp; Templates</div>
+      <h2 class="section-h">Project Management Toolkit</h2>
+      <p class="section-sub">A working library of the project controls I use on delivery, plus a live programme dashboard. Open the dashboard or download any template as a ready to use Excel file.</p>
+    </div>
+    <div class="tk-feature fade">
+      <div class="tk-banner">
+        <h3>Live Programme Dashboard</h3>
+        <p>An interactive view of a multi workstream telecom capital programme: delivery distribution, vendor engagement and site output.</p>
+        <div class="tk-actions">
+          <a class="tk-btn solid" href="dashboard.html" target="_blank" rel="noopener">View Dashboard &rarr;</a>
+          <a class="tk-btn outline" href="dashboard.html" download>Download</a>
+        </div>
+      </div>
+      <div class="tk-banner" style="background:linear-gradient(135deg,#1d1d1f 0%,#3d3d3f 100%);">
+        <h3>Full Template Library</h3>
+        <p>All thirteen project management templates in a single Excel workbook, formatted and ready to use with worked examples.</p>
+        <div class="tk-actions">
+          <a class="tk-btn solid" href="PM_Template_Library.xlsx" download>Download Full Library (.xlsx)</a>
+        </div>
+      </div>
+    </div>
+    <div class="tk-grid fade">
+        <div class="tk-card">
+          <div>
+            <div class="tk-name">RAID Log</div>
+            <div class="tk-purpose">Consolidated risks, assumptions, issues and dependencies in one control log.</div>
+          </div>
+          <a class="tk-dl" href="templates/RAID_Log.xlsx" download>&darr; Download Excel</a>
+        </div>
+        <div class="tk-card">
+          <div>
+            <div class="tk-name">Risk Register</div>
+            <div class="tk-purpose">Risk scoring with automatic probability times impact severity bands.</div>
+          </div>
+          <a class="tk-dl" href="templates/Risk_Register.xlsx" download>&darr; Download Excel</a>
+        </div>
+        <div class="tk-card">
+          <div>
+            <div class="tk-name">Issue Log</div>
+            <div class="tk-purpose">Live issue tracking with priority, ownership and resolution status.</div>
+          </div>
+          <a class="tk-dl" href="templates/Issue_Log.xlsx" download>&darr; Download Excel</a>
+        </div>
+        <div class="tk-card">
+          <div>
+            <div class="tk-name">Stakeholder Register</div>
+            <div class="tk-purpose">Power and interest mapping with an auto suggested engagement strategy.</div>
+          </div>
+          <a class="tk-dl" href="templates/Stakeholder_Register.xlsx" download>&darr; Download Excel</a>
+        </div>
+        <div class="tk-card">
+          <div>
+            <div class="tk-name">RACI Matrix</div>
+            <div class="tk-purpose">Responsibility assignment across deliverables and project roles.</div>
+          </div>
+          <a class="tk-dl" href="templates/RACI_Matrix.xlsx" download>&darr; Download Excel</a>
+        </div>
+        <div class="tk-card">
+          <div>
+            <div class="tk-name">Lessons Learned</div>
+            <div class="tk-purpose">Capture and categorise learnings with recommendations for future work.</div>
+          </div>
+          <a class="tk-dl" href="templates/Lessons_Learned.xlsx" download>&darr; Download Excel</a>
+        </div>
+        <div class="tk-card">
+          <div>
+            <div class="tk-name">Action Log</div>
+            <div class="tk-purpose">Action item tracking that auto flags overdue items past their due date.</div>
+          </div>
+          <a class="tk-dl" href="templates/Action_Log.xlsx" download>&darr; Download Excel</a>
+        </div>
+        <div class="tk-card">
+          <div>
+            <div class="tk-name">Decision Log</div>
+            <div class="tk-purpose">Record key decisions, alternatives considered and the rationale.</div>
+          </div>
+          <a class="tk-dl" href="templates/Decision_Log.xlsx" download>&darr; Download Excel</a>
+        </div>
+        <div class="tk-card">
+          <div>
+            <div class="tk-name">Change Log</div>
+            <div class="tk-purpose">Change request control with scope, cost and schedule impact assessment.</div>
+          </div>
+          <a class="tk-dl" href="templates/Change_Log.xlsx" download>&darr; Download Excel</a>
+        </div>
+        <div class="tk-card">
+          <div>
+            <div class="tk-name">WBS</div>
+            <div class="tk-purpose">Work breakdown structure decomposed into phases, packages and tasks.</div>
+          </div>
+          <a class="tk-dl" href="templates/WBS.xlsx" download>&darr; Download Excel</a>
+        </div>
+        <div class="tk-card">
+          <div>
+            <div class="tk-name">Milestone Tracker</div>
+            <div class="tk-purpose">Milestone schedule with RAG status and automatic variance in days.</div>
+          </div>
+          <a class="tk-dl" href="templates/Milestone_Tracker.xlsx" download>&darr; Download Excel</a>
+        </div>
+        <div class="tk-card">
+          <div>
+            <div class="tk-name">Kanban Board</div>
+            <div class="tk-purpose">Backlog, to do, in progress, review and done columns for flow.</div>
+          </div>
+          <a class="tk-dl" href="templates/Kanban_Board.xlsx" download>&darr; Download Excel</a>
+        </div>
+        <div class="tk-card">
+          <div>
+            <div class="tk-name">Status Report</div>
+            <div class="tk-purpose">Period project status snapshot for sponsors and steering groups.</div>
+          </div>
+          <a class="tk-dl" href="templates/Status_Report.xlsx" download>&darr; Download Excel</a>
+        </div>
+    </div>
+    <div class="tk-note">Each template is an independent Excel file with formatting, dropdowns and example rows. Download individually above or grab the full library.</div>
   </div>
 </section>
 
