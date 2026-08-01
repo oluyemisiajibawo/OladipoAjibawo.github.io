@@ -334,15 +334,16 @@ section { padding: 7rem 0; }
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 5rem;
-  display: -webkit-flex;
-  display: flex;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.4rem 2rem;
   text-align: center;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
-.metric { flex: 1; min-width: 140px; }
+.metric {
+  padding: 0.2rem 0.6rem;
+  border-left: 1px solid #e5e5ea;
+}
+.metric:first-child, .metric:nth-child(5) { border-left: none; }
 .metric-n {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2.1rem;
@@ -351,7 +352,8 @@ section { padding: 7rem 0; }
   color: #1d1d1f;
   line-height: 1;
 }
-.metric-l { font-size: 0.73rem; color: #6e6e73; margin-top: 0.4rem; line-height: 1.4; }
+.metric-l { font-size: 0.73rem; color: #1d1d1f; font-weight: 600; margin-top: 0.45rem; line-height: 1.4; }
+.metric-c { font-size: 0.66rem; color: #6e6e73; margin-top: 0.15rem; letter-spacing: 0.02em; text-transform: uppercase; }
 
 /* ABOUT */
 #about { background: #ffffff; }
@@ -531,6 +533,17 @@ section { padding: 7rem 0; }
   cursor: default;
 }
 .proj-card:hover { border-color: #b8b8be; box-shadow: 0 6px 30px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.proj-img {
+  display: block;
+  width: calc(100% + 3.8rem);
+  margin: -1.9rem -1.9rem 1.4rem -1.9rem;
+  height: 185px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+  border-bottom: 1px solid #e5e5ea;
+  background: #f5f5f7;
+}
+.proj-wide .proj-img { height: 235px; }
 .proj-wide { flex: 7; min-width: 380px; }
 .proj-narrow { flex: 5; min-width: 280px; }
 .proj-third { flex: 4; min-width: 250px; }
@@ -890,8 +903,8 @@ footer {
   .exp-card { min-width: 100%; }
   footer { flex-direction: column; gap: 0.8rem; text-align: center; }
   .hero-title { font-size: 2.6rem; }
-  .metrics-inner { gap: 1.5rem; }
-  .metric { min-width: 40%; }
+  .metrics-inner { gap: 1.5rem; grid-template-columns: repeat(2, 1fr); }
+  .metric { border-left: none; }
 }
 </style>
 </head>
@@ -927,7 +940,7 @@ footer {
       <span class="blue">IT Delivery</span><br>
       Manager
     </h1>
-    <p class="hero-sub">MBA &nbsp;&middot;&nbsp; PMP &nbsp;&middot;&nbsp; PRINCE2 &nbsp;&middot;&nbsp; 12+ Years. Delivering IT infrastructure, digital transformation, and business-change programmes across telecoms and energy &mdash; on time, on budget, and with clear governance and reporting.</p>
+    <p class="hero-sub">12+ Years &nbsp;&middot;&nbsp; MBA &nbsp;&middot;&nbsp; PMP &nbsp;&middot;&nbsp; PRINCE2 &mdash; delivering IT infrastructure, digital transformation, and business-change programmes across telecoms and energy: on time, on budget, with clear governance and reporting.</p>
     <div class="hero-pills">
       <span class="pill">PMP</span>
       <span class="pill">PRINCE2</span>
@@ -944,10 +957,10 @@ footer {
       <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
     </a>
     <div class="hero-stats">
-      <div><div class="hstat-num">50+</div><div class="hstat-lbl">Enterprise Deployments</div></div>
-      <div><div class="hstat-num">98%</div><div class="hstat-lbl">On-Time Delivery</div></div>
-      <div><div class="hstat-num">&pound;150M+</div><div class="hstat-lbl">Portfolio Value</div></div>
       <div><div class="hstat-num">12+</div><div class="hstat-lbl">Years Experience</div></div>
+      <div><div class="hstat-num">50+</div><div class="hstat-lbl">Enterprise Deployments</div></div>
+      <div><div class="hstat-num">&pound;150M+</div><div class="hstat-lbl">Portfolio Value</div></div>
+      <div><div class="hstat-num">98%</div><div class="hstat-lbl">On-Time Delivery</div></div>
     </div>
   </div>
 </section>
@@ -955,11 +968,14 @@ footer {
 <!-- METRICS BAND -->
 <div class="metrics-band fade">
   <div class="metrics-inner">
-    <div class="metric"><div class="metric-n">&pound;150M+</div><div class="metric-l">Infrastructure Portfolio Value</div></div>
-    <div class="metric"><div class="metric-n">2,000+</div><div class="metric-l">Telecoms Sites Delivered</div></div>
-    <div class="metric"><div class="metric-n">30%</div><div class="metric-l">Energy Efficiency Gains</div></div>
-    <div class="metric"><div class="metric-n">99.5%</div><div class="metric-l">Infrastructure Uptime Rate</div></div>
-    <div class="metric"><div class="metric-n">35%</div><div class="metric-l">PMO Reporting Time Saved</div></div>
+    <div class="metric"><div class="metric-n">3,000+</div><div class="metric-l">Telecoms Sites Delivered &amp; Upgraded</div><div class="metric-c">American Tower Corporation</div></div>
+    <div class="metric"><div class="metric-n">1,000+</div><div class="metric-l">Smart Grid &amp; Solar Deployments</div><div class="metric-c">American Tower &middot; Smart Energy</div></div>
+    <div class="metric"><div class="metric-n">500+</div><div class="metric-l">BTF Sites Delivered End-to-End</div><div class="metric-c">American Tower &middot; Modernisation</div></div>
+    <div class="metric"><div class="metric-n">30%</div><div class="metric-l">Energy Efficiency Gains</div><div class="metric-c">American Tower &middot; Grid &amp; Solar</div></div>
+    <div class="metric"><div class="metric-n">99.5%</div><div class="metric-l">Infrastructure Uptime Rate</div><div class="metric-c">American Tower &middot; National Portfolio</div></div>
+    <div class="metric"><div class="metric-n">35%</div><div class="metric-l">PMO Reporting Time Saved</div><div class="metric-c">American Tower &middot; 40+ Projects</div></div>
+    <div class="metric"><div class="metric-n">92%</div><div class="metric-l">NHS Shift Fulfilment Rate</div><div class="metric-c">Mcjay &middot; 15+ Hospital Sites</div></div>
+    <div class="metric"><div class="metric-n">&pound;500K+</div><div class="metric-l">IT &amp; SaaS Portfolio Delivered</div><div class="metric-c">Scenic International</div></div>
   </div>
 </div>
 
@@ -982,6 +998,7 @@ footer {
         <div class="certs-label">Professional Certifications</div>
         <div class="certs-list">
           <div class="cert-row"><span class="cert-badge">PMP</span><div><div class="cert-name">Project Management Professional</div><div class="cert-iss">Project Management Institute (PMI)</div></div></div>
+          <div class="cert-row"><span class="cert-badge">ISO</span><div><div class="cert-name">ISO/IEC 27001:2022 Lead Auditor</div><div class="cert-iss">Information Security Management Systems</div></div></div>
           <div class="cert-row"><span class="cert-badge">CSM</span><div><div class="cert-name">Certified Scrum Master</div><div class="cert-iss">Scrum Alliance</div></div></div>
           <div class="cert-row"><span class="cert-badge">SEC+</span><div><div class="cert-name">CompTIA Security+</div><div class="cert-iss">CompTIA &middot; ID: COMP001022408467</div></div></div>
           <div class="cert-row"><span class="cert-badge">CC</span><div><div class="cert-name">Certified in Cybersecurity</div><div class="cert-iss">ISC2 &middot; ID: 1548061</div></div></div>
@@ -1070,7 +1087,7 @@ footer {
       </div>
 
       <div class="tl-item">
-        <div class="tl-left"><div class="tl-date">Jun 2014 &ndash; Dec 2016</div><div class="tl-loc">London, UK</div></div>
+        <div class="tl-left"><div class="tl-date">Jun 2014 &ndash; Dec 2016</div><div class="tl-loc">London, UK &middot; Remote</div></div>
         <div class="tl-right">
           <div class="tl-role">IT Project Manager</div>
           <div class="tl-company">Scenic International Group Limited</div>
@@ -1140,6 +1157,7 @@ footer {
     </div>
     <div class="proj-grid fade">
       <div class="proj-card proj-wide">
+        <img class="proj-img" src="images/proj-sitebuild.jpg" alt="Newly constructed lattice telecoms tower on a greenfield site" loading="lazy">
         <div class="proj-sector">Telecoms Infrastructure &middot; American Tower Corporation</div>
         <div class="proj-title">&pound;150M+ Infrastructure Programme - 2,000+ Telecoms Sites</div>
         <p class="proj-desc">Led end-to-end delivery of a large-scale telecoms infrastructure portfolio, coordinating virtual delivery teams of 50+ across engineering, vendor, and field operations spanning multiple regions. Sustained full benefit realisation, CAPEX within 5% of baseline, and 99.5% tower asset uptime throughout.</p>
@@ -1147,13 +1165,15 @@ footer {
         <div class="proj-tags"><span class="proj-tag">Waterfall</span><span class="proj-tag">Agile Hybrid</span><span class="proj-tag">Smartsheet</span><span class="proj-tag">JIRA</span><span class="proj-tag">Virtual Teams 50+</span></div>
       </div>
       <div class="proj-card proj-narrow">
-        <div class="proj-sector">Smart Energy &middot; ATC Nigeria</div>
+        <img class="proj-img" src="images/proj-smartgrid.jpg" alt="Smart grid power management and rectifier cabinet at a telecoms site" loading="lazy">
+        <div class="proj-sector">Smart Energy &middot; American Tower Corporation</div>
         <div class="proj-title">1,000+ Smart Grid and Solar Deployments</div>
         <p class="proj-desc">Co-led nationwide Smart Grid Systems, Grid Retrofits, and Grid as a Service deployment across 1,000 telecoms sites, coordinating 15 simultaneous third-party suppliers and achieving a 30% improvement in energy efficiency while reducing OPEX by 22%.</p>
         <div class="proj-metrics"><div><div class="pm-val">30%</div><div class="pm-lbl">Energy Gain</div></div><div><div class="pm-val">22%</div><div class="pm-lbl">OPEX Reduction</div></div></div>
         <div class="proj-tags"><span class="proj-tag">Solar-Li-ion</span><span class="proj-tag">Smart Grid</span><span class="proj-tag">IoT</span></div>
       </div>
       <div class="proj-card proj-third">
+        <img class="proj-img" src="images/proj-cloud.svg" alt="Illustration of cloud platform integrating ERP, CRM and Microsoft 365" loading="lazy">
         <div class="proj-sector">IT Infrastructure &middot; Scenic International</div>
         <div class="proj-title">&pound;500K+ SaaS and Cloud Portfolio</div>
         <p class="proj-desc">Delivered enterprise SaaS and IT infrastructure including NetSuite ERP rollouts, Boomi integrations, and Azure systems, maintaining 100% ISO 27001 compliance throughout all concurrent workstreams.</p>
@@ -1161,13 +1181,15 @@ footer {
         <div class="proj-tags"><span class="proj-tag">NetSuite ERP</span><span class="proj-tag">Azure</span><span class="proj-tag">ISO 27001</span></div>
       </div>
       <div class="proj-card proj-third">
-        <div class="proj-sector">PMO Governance &middot; ATC Nigeria</div>
+        <img class="proj-img" src="images/proj-upgrades.jpg" alt="Close-up of upgraded antennas on a telecoms monopole" loading="lazy">
+        <div class="proj-sector">PMO Governance &middot; American Tower Corporation</div>
         <div class="proj-title">1,500+ Tower Upgrades &ndash; National PMO</div>
         <p class="proj-desc">Established PMO governance control gates that increased delivery efficiency by 18% and reduced rework cycles by 25% across a nationally distributed telecoms infrastructure estate.</p>
         <div class="proj-metrics"><div><div class="pm-val">18%</div><div class="pm-lbl">Efficiency Gain</div></div></div>
         <div class="proj-tags"><span class="proj-tag">PMO</span><span class="proj-tag">Nintex</span><span class="proj-tag">Confluence</span></div>
       </div>
       <div class="proj-card proj-third">
+        <img class="proj-img" src="images/proj-analytics.svg" alt="Illustration of a portfolio KPI dashboard with charts and RAG status" loading="lazy">
         <div class="proj-sector">Data Analytics &middot; PMO Reporting</div>
         <div class="proj-title">Real-Time Power BI Dashboards Across 40+ Projects</div>
         <p class="proj-desc">Designed and maintained executive-level dashboards in Power BI and Smartsheet, consolidating data from 40+ concurrent active projects into real-time portfolio health and KPI reports.</p>
@@ -1321,7 +1343,7 @@ footer {
         <div class="tools-label">PM Tools <span class="sg-line"></span></div>
         <div class="tools-cloud"><span class="tool-pill hi">Jira</span><span class="tool-pill hi">Smartsheet</span><span class="tool-pill hi">MS Project</span><span class="tool-pill hi">Power BI</span><span class="tool-pill">Confluence</span><span class="tool-pill">Asana</span><span class="tool-pill">Monday.com</span><span class="tool-pill">Azure DevOps</span></div>
         <div class="tools-label">Cloud and Infrastructure <span class="sg-line"></span></div>
-        <div class="tools-cloud"><span class="tool-pill hi">Microsoft Azure</span><span class="tool-pill">AWS Foundation</span><span class="tool-pill">SharePoint</span><span class="tool-pill">Office 365</span><span class="tool-pill">Acsys</span><span class="tool-pill">Galooli</span></div>
+        <div class="tools-cloud"><span class="tool-pill hi">Microsoft Azure</span><span class="tool-pill">SharePoint</span><span class="tool-pill">Office 365</span><span class="tool-pill">Acsys</span><span class="tool-pill">Galooli</span></div>
         <div class="tools-label">Analytics and Integrations <span class="sg-line"></span></div>
         <div class="tools-cloud"><span class="tool-pill">Tableau</span><span class="tool-pill">Salesforce CRM</span><span class="tool-pill">Nintex / Promapp</span><span class="tool-pill">Oracle EBS</span><span class="tool-pill">NetSuite ERP</span><span class="tool-pill">Boomi</span><span class="tool-pill">MuleSoft</span><span class="tool-pill">Google Workspace</span></div>
         <div class="tools-label">Governance and Compliance <span class="sg-line"></span></div>
